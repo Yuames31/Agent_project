@@ -1,0 +1,342 @@
+2026-10-20 18:23:34 - agent - ERROR - vector_store.py:103 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\扫地机器人100问.pdf加载失败：status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: Value error, batch size is invalid, it should not be larger than 10.: input.contents
+Traceback (most recent call last):
+  File "E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\rag\vector_store.py", line 91, in load_document
+    self.vector_store = FAISS.from_documents(split_document, embedding_model)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_core\vectorstores\base.py", line 837, in from_documents
+    return cls.from_texts(texts, embedding, metadatas=metadatas, **kwargs)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\vectorstores\faiss.py", line 1043, in from_texts
+    embeddings = embedding.embed_documents(texts)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\embeddings\dashscope.py", line 150, in embed_documents
+    embeddings = embed_with_retry(
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\embeddings\dashscope.py", line 78, in embed_with_retry
+    return _embed_with_retry(**kwargs)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 404, in wrapped_f
+    return copy(f, *args, **kw)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 550, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 440, in iter
+    result = action(retry_state)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 462, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+  File "D:\anaconda_envs\myenv1\lib\concurrent\futures\_base.py", line 451, in result
+    return self.__get_result()
+  File "D:\anaconda_envs\myenv1\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 553, in __call__
+    result = fn(*args, **kwargs)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\embeddings\dashscope.py", line 65, in _embed_with_retry
+    raise ValueError(
+ValueError: status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: Value error, batch size is invalid, it should not be larger than 10.: input.contents
+2026-10-20 18:23:35 - agent - ERROR - vector_store.py:103 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\扫地机器人100问2.txt加载失败：status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: Value error, batch size is invalid, it should not be larger than 10.: input.contents
+Traceback (most recent call last):
+  File "E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\rag\vector_store.py", line 91, in load_document
+    self.vector_store = FAISS.from_documents(split_document, embedding_model)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_core\vectorstores\base.py", line 837, in from_documents
+    return cls.from_texts(texts, embedding, metadatas=metadatas, **kwargs)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\vectorstores\faiss.py", line 1043, in from_texts
+    embeddings = embedding.embed_documents(texts)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\embeddings\dashscope.py", line 150, in embed_documents
+    embeddings = embed_with_retry(
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\embeddings\dashscope.py", line 78, in embed_with_retry
+    return _embed_with_retry(**kwargs)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 404, in wrapped_f
+    return copy(f, *args, **kw)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 550, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 440, in iter
+    result = action(retry_state)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 462, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+  File "D:\anaconda_envs\myenv1\lib\concurrent\futures\_base.py", line 451, in result
+    return self.__get_result()
+  File "D:\anaconda_envs\myenv1\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 553, in __call__
+    result = fn(*args, **kwargs)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\embeddings\dashscope.py", line 65, in _embed_with_retry
+    raise ValueError(
+ValueError: status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: Value error, batch size is invalid, it should not be larger than 10.: input.contents
+2026-10-20 18:23:35 - agent - ERROR - vector_store.py:103 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\扫拖一体机器人100问.txt加载失败：status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: Value error, batch size is invalid, it should not be larger than 10.: input.contents
+Traceback (most recent call last):
+  File "E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\rag\vector_store.py", line 91, in load_document
+    self.vector_store = FAISS.from_documents(split_document, embedding_model)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_core\vectorstores\base.py", line 837, in from_documents
+    return cls.from_texts(texts, embedding, metadatas=metadatas, **kwargs)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\vectorstores\faiss.py", line 1043, in from_texts
+    embeddings = embedding.embed_documents(texts)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\embeddings\dashscope.py", line 150, in embed_documents
+    embeddings = embed_with_retry(
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\embeddings\dashscope.py", line 78, in embed_with_retry
+    return _embed_with_retry(**kwargs)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 404, in wrapped_f
+    return copy(f, *args, **kw)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 550, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 440, in iter
+    result = action(retry_state)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 462, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+  File "D:\anaconda_envs\myenv1\lib\concurrent\futures\_base.py", line 451, in result
+    return self.__get_result()
+  File "D:\anaconda_envs\myenv1\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 553, in __call__
+    result = fn(*args, **kwargs)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\embeddings\dashscope.py", line 65, in _embed_with_retry
+    raise ValueError(
+ValueError: status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: Value error, batch size is invalid, it should not be larger than 10.: input.contents
+2026-10-20 18:23:36 - agent - ERROR - vector_store.py:103 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\故障排除.txt加载失败：status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: Value error, batch size is invalid, it should not be larger than 10.: input.contents
+Traceback (most recent call last):
+  File "E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\rag\vector_store.py", line 91, in load_document
+    self.vector_store = FAISS.from_documents(split_document, embedding_model)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_core\vectorstores\base.py", line 837, in from_documents
+    return cls.from_texts(texts, embedding, metadatas=metadatas, **kwargs)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\vectorstores\faiss.py", line 1043, in from_texts
+    embeddings = embedding.embed_documents(texts)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\embeddings\dashscope.py", line 150, in embed_documents
+    embeddings = embed_with_retry(
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\embeddings\dashscope.py", line 78, in embed_with_retry
+    return _embed_with_retry(**kwargs)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 404, in wrapped_f
+    return copy(f, *args, **kw)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 550, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 440, in iter
+    result = action(retry_state)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 462, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+  File "D:\anaconda_envs\myenv1\lib\concurrent\futures\_base.py", line 451, in result
+    return self.__get_result()
+  File "D:\anaconda_envs\myenv1\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 553, in __call__
+    result = fn(*args, **kwargs)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\embeddings\dashscope.py", line 65, in _embed_with_retry
+    raise ValueError(
+ValueError: status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: Value error, batch size is invalid, it should not be larger than 10.: input.contents
+2026-10-20 18:23:36 - agent - ERROR - vector_store.py:103 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\维护保养.txt加载失败：status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: Value error, batch size is invalid, it should not be larger than 10.: input.contents
+Traceback (most recent call last):
+  File "E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\rag\vector_store.py", line 91, in load_document
+    self.vector_store = FAISS.from_documents(split_document, embedding_model)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_core\vectorstores\base.py", line 837, in from_documents
+    return cls.from_texts(texts, embedding, metadatas=metadatas, **kwargs)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\vectorstores\faiss.py", line 1043, in from_texts
+    embeddings = embedding.embed_documents(texts)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\embeddings\dashscope.py", line 150, in embed_documents
+    embeddings = embed_with_retry(
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\embeddings\dashscope.py", line 78, in embed_with_retry
+    return _embed_with_retry(**kwargs)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 404, in wrapped_f
+    return copy(f, *args, **kw)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 550, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 440, in iter
+    result = action(retry_state)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 462, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+  File "D:\anaconda_envs\myenv1\lib\concurrent\futures\_base.py", line 451, in result
+    return self.__get_result()
+  File "D:\anaconda_envs\myenv1\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 553, in __call__
+    result = fn(*args, **kwargs)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\embeddings\dashscope.py", line 65, in _embed_with_retry
+    raise ValueError(
+ValueError: status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: Value error, batch size is invalid, it should not be larger than 10.: input.contents
+2026-10-20 18:23:37 - agent - ERROR - vector_store.py:103 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\选购指南.txt加载失败：status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: Value error, batch size is invalid, it should not be larger than 10.: input.contents
+Traceback (most recent call last):
+  File "E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\rag\vector_store.py", line 91, in load_document
+    self.vector_store = FAISS.from_documents(split_document, embedding_model)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_core\vectorstores\base.py", line 837, in from_documents
+    return cls.from_texts(texts, embedding, metadatas=metadatas, **kwargs)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\vectorstores\faiss.py", line 1043, in from_texts
+    embeddings = embedding.embed_documents(texts)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\embeddings\dashscope.py", line 150, in embed_documents
+    embeddings = embed_with_retry(
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\embeddings\dashscope.py", line 78, in embed_with_retry
+    return _embed_with_retry(**kwargs)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 404, in wrapped_f
+    return copy(f, *args, **kw)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 550, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 440, in iter
+    result = action(retry_state)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 462, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+  File "D:\anaconda_envs\myenv1\lib\concurrent\futures\_base.py", line 451, in result
+    return self.__get_result()
+  File "D:\anaconda_envs\myenv1\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "D:\anaconda_envs\myenv1\lib\site-packages\tenacity\__init__.py", line 553, in __call__
+    result = fn(*args, **kwargs)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\embeddings\dashscope.py", line 65, in _embed_with_retry
+    raise ValueError(
+ValueError: status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: Value error, batch size is invalid, it should not be larger than 10.: input.contents
+2026-10-20 18:28:34 - agent - ERROR - vector_store.py:103 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\扫地机器人100问.pdf加载失败：name 'persist_dir' is not defined
+Traceback (most recent call last):
+  File "E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\rag\vector_store.py", line 94, in load_document
+    self.vector_store.save_local(persist_dir)
+NameError: name 'persist_dir' is not defined
+2026-10-20 18:28:36 - agent - ERROR - vector_store.py:103 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\扫地机器人100问2.txt加载失败：name 'persist_dir' is not defined
+Traceback (most recent call last):
+  File "E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\rag\vector_store.py", line 94, in load_document
+    self.vector_store.save_local(persist_dir)
+NameError: name 'persist_dir' is not defined
+2026-10-20 18:28:38 - agent - ERROR - vector_store.py:103 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\扫拖一体机器人100问.txt加载失败：name 'persist_dir' is not defined
+Traceback (most recent call last):
+  File "E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\rag\vector_store.py", line 94, in load_document
+    self.vector_store.save_local(persist_dir)
+NameError: name 'persist_dir' is not defined
+2026-10-20 18:28:43 - agent - ERROR - vector_store.py:103 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\故障排除.txt加载失败：name 'persist_dir' is not defined
+Traceback (most recent call last):
+  File "E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\rag\vector_store.py", line 94, in load_document
+    self.vector_store.save_local(persist_dir)
+NameError: name 'persist_dir' is not defined
+2026-10-20 18:28:46 - agent - ERROR - vector_store.py:103 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\维护保养.txt加载失败：name 'persist_dir' is not defined
+Traceback (most recent call last):
+  File "E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\rag\vector_store.py", line 94, in load_document
+    self.vector_store.save_local(persist_dir)
+NameError: name 'persist_dir' is not defined
+2026-10-20 18:28:48 - agent - ERROR - vector_store.py:103 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\选购指南.txt加载失败：name 'persist_dir' is not defined
+Traceback (most recent call last):
+  File "E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\rag\vector_store.py", line 94, in load_document
+    self.vector_store.save_local(persist_dir)
+NameError: name 'persist_dir' is not defined
+2026-10-20 18:36:46 - agent - ERROR - vector_store.py:103 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\扫地机器人100问.pdf加载失败：Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\a\faiss\faiss\faiss\impl\io.cpp:104: Error: 'f' failed: could not open E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\faiss_index\index.faiss for writing: No such file or directory
+Traceback (most recent call last):
+  File "E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\rag\vector_store.py", line 94, in load_document
+    self.vector_store.save_local(self.persist_dir)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\vectorstores\faiss.py", line 1160, in save_local
+    faiss.write_index(self.index, str(path / f"{index_name}.faiss"))
+  File "D:\anaconda_envs\myenv1\lib\site-packages\faiss\swigfaiss.py", line 13872, in write_index
+    return _swigfaiss.write_index(*args)
+RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\a\faiss\faiss\faiss\impl\io.cpp:104: Error: 'f' failed: could not open E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\faiss_index\index.faiss for writing: No such file or directory
+2026-10-20 18:36:48 - agent - ERROR - vector_store.py:103 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\扫地机器人100问2.txt加载失败：Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\a\faiss\faiss\faiss\impl\io.cpp:104: Error: 'f' failed: could not open E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\faiss_index\index.faiss for writing: No such file or directory
+Traceback (most recent call last):
+  File "E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\rag\vector_store.py", line 94, in load_document
+    self.vector_store.save_local(self.persist_dir)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\vectorstores\faiss.py", line 1160, in save_local
+    faiss.write_index(self.index, str(path / f"{index_name}.faiss"))
+  File "D:\anaconda_envs\myenv1\lib\site-packages\faiss\swigfaiss.py", line 13872, in write_index
+    return _swigfaiss.write_index(*args)
+RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\a\faiss\faiss\faiss\impl\io.cpp:104: Error: 'f' failed: could not open E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\faiss_index\index.faiss for writing: No such file or directory
+2026-10-20 18:36:51 - agent - ERROR - vector_store.py:103 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\扫拖一体机器人100问.txt加载失败：Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\a\faiss\faiss\faiss\impl\io.cpp:104: Error: 'f' failed: could not open E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\faiss_index\index.faiss for writing: No such file or directory
+Traceback (most recent call last):
+  File "E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\rag\vector_store.py", line 94, in load_document
+    self.vector_store.save_local(self.persist_dir)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\vectorstores\faiss.py", line 1160, in save_local
+    faiss.write_index(self.index, str(path / f"{index_name}.faiss"))
+  File "D:\anaconda_envs\myenv1\lib\site-packages\faiss\swigfaiss.py", line 13872, in write_index
+    return _swigfaiss.write_index(*args)
+RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\a\faiss\faiss\faiss\impl\io.cpp:104: Error: 'f' failed: could not open E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\faiss_index\index.faiss for writing: No such file or directory
+2026-10-20 18:36:56 - agent - ERROR - vector_store.py:103 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\故障排除.txt加载失败：Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\a\faiss\faiss\faiss\impl\io.cpp:104: Error: 'f' failed: could not open E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\faiss_index\index.faiss for writing: No such file or directory
+Traceback (most recent call last):
+  File "E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\rag\vector_store.py", line 94, in load_document
+    self.vector_store.save_local(self.persist_dir)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\vectorstores\faiss.py", line 1160, in save_local
+    faiss.write_index(self.index, str(path / f"{index_name}.faiss"))
+  File "D:\anaconda_envs\myenv1\lib\site-packages\faiss\swigfaiss.py", line 13872, in write_index
+    return _swigfaiss.write_index(*args)
+RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\a\faiss\faiss\faiss\impl\io.cpp:104: Error: 'f' failed: could not open E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\faiss_index\index.faiss for writing: No such file or directory
+2026-10-20 18:36:58 - agent - ERROR - vector_store.py:103 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\维护保养.txt加载失败：Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\a\faiss\faiss\faiss\impl\io.cpp:104: Error: 'f' failed: could not open E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\faiss_index\index.faiss for writing: No such file or directory
+Traceback (most recent call last):
+  File "E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\rag\vector_store.py", line 94, in load_document
+    self.vector_store.save_local(self.persist_dir)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\vectorstores\faiss.py", line 1160, in save_local
+    faiss.write_index(self.index, str(path / f"{index_name}.faiss"))
+  File "D:\anaconda_envs\myenv1\lib\site-packages\faiss\swigfaiss.py", line 13872, in write_index
+    return _swigfaiss.write_index(*args)
+RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\a\faiss\faiss\faiss\impl\io.cpp:104: Error: 'f' failed: could not open E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\faiss_index\index.faiss for writing: No such file or directory
+2026-10-20 18:37:01 - agent - ERROR - vector_store.py:103 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\选购指南.txt加载失败：Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\a\faiss\faiss\faiss\impl\io.cpp:104: Error: 'f' failed: could not open E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\faiss_index\index.faiss for writing: No such file or directory
+Traceback (most recent call last):
+  File "E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\rag\vector_store.py", line 94, in load_document
+    self.vector_store.save_local(self.persist_dir)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\vectorstores\faiss.py", line 1160, in save_local
+    faiss.write_index(self.index, str(path / f"{index_name}.faiss"))
+  File "D:\anaconda_envs\myenv1\lib\site-packages\faiss\swigfaiss.py", line 13872, in write_index
+    return _swigfaiss.write_index(*args)
+RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\a\faiss\faiss\faiss\impl\io.cpp:104: Error: 'f' failed: could not open E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\faiss_index\index.faiss for writing: No such file or directory
+2026-10-20 18:39:37 - agent - ERROR - vector_store.py:104 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\扫地机器人100问.pdf加载失败：Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\a\faiss\faiss\faiss\impl\io.cpp:104: Error: 'f' failed: could not open E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\faiss_index\index.faiss for writing: No such file or directory
+Traceback (most recent call last):
+  File "E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\rag\vector_store.py", line 95, in load_document
+    self.vector_store.save_local(self.persist_dir)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\vectorstores\faiss.py", line 1160, in save_local
+    faiss.write_index(self.index, str(path / f"{index_name}.faiss"))
+  File "D:\anaconda_envs\myenv1\lib\site-packages\faiss\swigfaiss.py", line 13872, in write_index
+    return _swigfaiss.write_index(*args)
+RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\a\faiss\faiss\faiss\impl\io.cpp:104: Error: 'f' failed: could not open E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\faiss_index\index.faiss for writing: No such file or directory
+2026-10-20 18:39:38 - agent - ERROR - vector_store.py:104 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\扫地机器人100问2.txt加载失败：Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\a\faiss\faiss\faiss\impl\io.cpp:104: Error: 'f' failed: could not open E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\faiss_index\index.faiss for writing: No such file or directory
+Traceback (most recent call last):
+  File "E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\rag\vector_store.py", line 95, in load_document
+    self.vector_store.save_local(self.persist_dir)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\vectorstores\faiss.py", line 1160, in save_local
+    faiss.write_index(self.index, str(path / f"{index_name}.faiss"))
+  File "D:\anaconda_envs\myenv1\lib\site-packages\faiss\swigfaiss.py", line 13872, in write_index
+    return _swigfaiss.write_index(*args)
+RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\a\faiss\faiss\faiss\impl\io.cpp:104: Error: 'f' failed: could not open E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\faiss_index\index.faiss for writing: No such file or directory
+2026-10-20 18:39:41 - agent - ERROR - vector_store.py:104 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\扫拖一体机器人100问.txt加载失败：Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\a\faiss\faiss\faiss\impl\io.cpp:104: Error: 'f' failed: could not open E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\faiss_index\index.faiss for writing: No such file or directory
+Traceback (most recent call last):
+  File "E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\rag\vector_store.py", line 95, in load_document
+    self.vector_store.save_local(self.persist_dir)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\vectorstores\faiss.py", line 1160, in save_local
+    faiss.write_index(self.index, str(path / f"{index_name}.faiss"))
+  File "D:\anaconda_envs\myenv1\lib\site-packages\faiss\swigfaiss.py", line 13872, in write_index
+    return _swigfaiss.write_index(*args)
+RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\a\faiss\faiss\faiss\impl\io.cpp:104: Error: 'f' failed: could not open E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\faiss_index\index.faiss for writing: No such file or directory
+2026-10-20 18:39:46 - agent - ERROR - vector_store.py:104 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\故障排除.txt加载失败：Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\a\faiss\faiss\faiss\impl\io.cpp:104: Error: 'f' failed: could not open E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\faiss_index\index.faiss for writing: No such file or directory
+Traceback (most recent call last):
+  File "E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\rag\vector_store.py", line 95, in load_document
+    self.vector_store.save_local(self.persist_dir)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\vectorstores\faiss.py", line 1160, in save_local
+    faiss.write_index(self.index, str(path / f"{index_name}.faiss"))
+  File "D:\anaconda_envs\myenv1\lib\site-packages\faiss\swigfaiss.py", line 13872, in write_index
+    return _swigfaiss.write_index(*args)
+RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\a\faiss\faiss\faiss\impl\io.cpp:104: Error: 'f' failed: could not open E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\faiss_index\index.faiss for writing: No such file or directory
+2026-10-20 18:39:48 - agent - ERROR - vector_store.py:104 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\维护保养.txt加载失败：Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\a\faiss\faiss\faiss\impl\io.cpp:104: Error: 'f' failed: could not open E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\faiss_index\index.faiss for writing: No such file or directory
+Traceback (most recent call last):
+  File "E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\rag\vector_store.py", line 95, in load_document
+    self.vector_store.save_local(self.persist_dir)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\vectorstores\faiss.py", line 1160, in save_local
+    faiss.write_index(self.index, str(path / f"{index_name}.faiss"))
+  File "D:\anaconda_envs\myenv1\lib\site-packages\faiss\swigfaiss.py", line 13872, in write_index
+    return _swigfaiss.write_index(*args)
+RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\a\faiss\faiss\faiss\impl\io.cpp:104: Error: 'f' failed: could not open E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\faiss_index\index.faiss for writing: No such file or directory
+2026-10-20 18:39:50 - agent - ERROR - vector_store.py:104 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\选购指南.txt加载失败：Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\a\faiss\faiss\faiss\impl\io.cpp:104: Error: 'f' failed: could not open E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\faiss_index\index.faiss for writing: No such file or directory
+Traceback (most recent call last):
+  File "E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\rag\vector_store.py", line 95, in load_document
+    self.vector_store.save_local(self.persist_dir)
+  File "D:\anaconda_envs\myenv1\lib\site-packages\langchain_community\vectorstores\faiss.py", line 1160, in save_local
+    faiss.write_index(self.index, str(path / f"{index_name}.faiss"))
+  File "D:\anaconda_envs\myenv1\lib\site-packages\faiss\swigfaiss.py", line 13872, in write_index
+    return _swigfaiss.write_index(*args)
+RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\a\faiss\faiss\faiss\impl\io.cpp:104: Error: 'f' failed: could not open E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\faiss_index\index.faiss for writing: No such file or directory
+2026-10-20 18:46:30 - agent - INFO - vector_store.py:115 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\扫地机器人100问.pdf成功
+2026-10-20 18:46:32 - agent - INFO - vector_store.py:115 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\扫地机器人100问2.txt成功
+2026-10-20 18:46:34 - agent - INFO - vector_store.py:115 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\扫拖一体机器人100问.txt成功
+2026-10-20 18:46:39 - agent - INFO - vector_store.py:115 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\故障排除.txt成功
+2026-10-20 18:46:42 - agent - INFO - vector_store.py:115 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\维护保养.txt成功
+2026-10-20 18:46:44 - agent - INFO - vector_store.py:115 - [加载知识库]E:\桌面\大模型\AI大模型RAG与智能体开发\Agent智能体\智能体项目\data\选购指南.txt成功
