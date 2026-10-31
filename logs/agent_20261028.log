@@ -1,0 +1,38 @@
+2026-10-28 10:45:25 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有1条消息。
+2026-10-28 10:45:25 - agent - DEBUG - middleware.py:38 - [log_before_model]HumanMessage | 扫地机器人在我所在地区的气温下如何保养
+2026-10-28 10:45:30 - agent - INFO - middleware.py:18 - [tool monitor]执行工具：get_user_location
+2026-10-28 10:45:30 - agent - INFO - middleware.py:19 - [tool monitor]传入参数：{}
+2026-10-28 10:45:30 - agent - INFO - middleware.py:22 - [tool monitor]工具get_user_location调用成功
+2026-10-28 10:45:30 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有3条消息。
+2026-10-28 10:45:30 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage | 上海
+2026-10-28 10:45:36 - agent - INFO - middleware.py:18 - [tool monitor]执行工具：get_weather
+2026-10-28 10:45:36 - agent - INFO - middleware.py:19 - [tool monitor]传入参数：{'city': '上海'}
+2026-10-28 10:45:36 - agent - INFO - middleware.py:22 - [tool monitor]工具get_weather调用成功
+2026-10-28 10:45:37 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有5条消息。
+2026-10-28 10:45:37 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage | 城市上海天气为晴天，气温26摄氏度，空气湿度50%，南风1级，AQI21，最近6小时降雨概率极低
+2026-10-28 10:45:51 - agent - INFO - middleware.py:18 - [tool monitor]执行工具：rag_summarize
+2026-10-28 10:45:51 - agent - INFO - middleware.py:19 - [tool monitor]传入参数：{'query': '上海地区扫地机器人保养建议'}
+2026-10-28 10:45:54 - agent - INFO - middleware.py:22 - [tool monitor]工具rag_summarize调用成功
+2026-10-28 10:45:57 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有7条消息。
+2026-10-28 10:45:57 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage | 对于上海地区的扫地机器人保养，建议每日使用后用干软布清洁机身，并清理防撞条缝隙中的毛发；每次清扫完成后将模式调至“待机”状态；每周检查充电座电源适配器是否正常；如果机器人沾到宠物粪便需立即清洁并消毒；每天检查边刷旋转情况。此外，还需定期更新固件和APP，避免长时间连续工作，使用前检查地面有无尖锐物体等障碍物。
+2026-10-28 10:53:15 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有1条消息。
+2026-10-28 10:53:15 - agent - DEBUG - middleware.py:38 - [log_before_model]HumanMessage | 扫地机器人在我所在地区的气温下如何保养
+2026-10-28 10:53:21 - agent - INFO - middleware.py:18 - [tool monitor]执行工具：get_user_location
+2026-10-28 10:53:21 - agent - INFO - middleware.py:19 - [tool monitor]传入参数：{}
+2026-10-28 10:53:21 - agent - INFO - middleware.py:22 - [tool monitor]工具get_user_location调用成功
+2026-10-28 10:53:21 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有3条消息。
+2026-10-28 10:53:21 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage | 上海
+2026-10-28 10:53:28 - agent - INFO - middleware.py:18 - [tool monitor]执行工具：get_weather
+2026-10-28 10:53:28 - agent - INFO - middleware.py:19 - [tool monitor]传入参数：{'city': '上海'}
+2026-10-28 10:53:28 - agent - INFO - middleware.py:22 - [tool monitor]工具get_weather调用成功
+2026-10-28 10:53:29 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有5条消息。
+2026-10-28 10:53:29 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage | 城市上海天气为晴天，气温26摄氏度，空气湿度50%，南风1级，AQI21，最近6小时降雨概率极低
+2026-10-28 10:53:45 - agent - INFO - middleware.py:18 - [tool monitor]执行工具：rag_summarize
+2026-10-28 10:53:45 - agent - INFO - middleware.py:19 - [tool monitor]传入参数：{'query': '扫地机器人 保养 气候条件'}
+2026-10-28 10:53:48 - agent - INFO - middleware.py:22 - [tool monitor]工具rag_summarize调用成功
+2026-10-28 10:53:51 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有7条消息。
+2026-10-28 10:53:51 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage | 在不同气候条件下保养扫地机器人需要注意：夏季应避免机器人直接暴露于阳光下工作，并确保其充电环境通风良好，同时每周检查电池温度以防止过热；冬季使用前需让机器人在室温环境下静置30分钟，并保证充电时周围温度不低于5℃。对于北方干燥多灰的环境，建议增加吸力并每日清理尘盒，每月还需对风道和滤网做深度清洁。
+2026-10-28 10:55:37 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有1条消息。
+2026-10-28 10:55:37 - agent - DEBUG - middleware.py:38 - [log_before_model]HumanMessage | 你好
+2026-10-28 11:27:35 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有1条消息。
+2026-10-28 11:27:35 - agent - DEBUG - middleware.py:38 - [log_before_model]HumanMessage | 你好

@@ -15,11 +15,14 @@ class ReactAgent:
             middleware=[monitor_tool, log_before_model, report_prompt_switch],
         )
 
-    def execute_stream(self,query: str):
+    def execute_stream(self, query: str, history: list[dict] | None = None):
+        messages = []
+        if history:
+            messages.extend(history)
+        messages.append({"role": "user", "content": query})
+
         input_dict = {
-            "messages": [
-                {"role": "user", "content": query},
-            ]
+            "messages": messages,
         }
 
         # 第三个参数context就是上下文runtime中的信息，就是我们做提示词切换的标记
