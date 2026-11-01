@@ -14,7 +14,7 @@
 
 ## 技术栈
 
-Python 3.10 · LangChain / LangGraph · FAISS · DashScope（qwen-max + text-embedding-v3）· Streamlit · PyYAML
+Python 3.10 · LangChain / LangGraph · FAISS · DashScope（qwen-max + text-embedding-v3）· Streamlit · PyYAML · requests
 
 ## 快速开始
 
@@ -24,12 +24,16 @@ Python 3.10 · LangChain / LangGraph · FAISS · DashScope（qwen-max + text-emb
 pip install -r requirements.txt
 ```
 
-配置 DashScope API Key 环境变量：
+配置环境变量（Windows，`set` 仅对当前终端生效）：
 
 ```bash
-# Windows
-set DASHSCOPE_API_KEY = 自己的key
+# DashScope（通义千问）API Key —— 构建知识库与对话必需
+set DASHSCOPE_API_KEY=你的key
+# 和风天气 API Key —— 可选；不配置时天气工具返回友好提示，不影响其他功能
+set QWEATHER_API_KEY=你的key
 ```
+
+需要永久生效可用 `setx DASHSCOPE_API_KEY 你的key`（新开终端生效）。
 
 ### 2. 构建知识库
 
@@ -62,7 +66,7 @@ streamlit run app_new.py
 ├── model/
 │   └── factory.py          # 模型工厂（Chat / Embedding）
 ├── utils/                  # 路径、日志、配置、Prompt 加载等通用工具
-├── config/                 # YAML 配置（模型、向量库、提示词路径）
+├── config/                 # YAML 配置（模型、向量库、提示词、天气）
 ├── prompts/                # 系统提示词（问答 / 报告 / RAG 总结）
 └── data/                   # 领域知识文档 + 外部使用记录
 ```
@@ -75,6 +79,7 @@ streamlit run app_new.py
 | `config/chroma.yml` | 向量库路径、分片参数（chunk_size / chunk_overlap）、检索 top-k |
 | `config/prompts.yml` | 各提示词文件路径 |
 | `config/agent.yml` | 外部数据文件路径 |
+| `config/weather.yml` | 和风天气 API host（Key 走环境变量 `QWEATHER_API_KEY`） |
 | `prompts/main_prompt.txt` | 智能客服主系统提示词 |
 | `prompts/report_prompt.txt` | 报告生成场景提示词 |
 | `prompts/rag_summarize.txt` | RAG 总结链路提示词 |
@@ -82,11 +87,12 @@ streamlit run app_new.py
 ## 数据说明
 
 - `data/` 下的领域文档用于构建 RAG 知识库（含故障排除、维护保养、选购指南等）
-- `data/external/records.csv` 为外部系统使用记录（静态演示数据，覆盖 2025 年 1 - 12 月）
-- 天气、用户位置、用户 ID 为演示用模拟数据，可替换为真实 API 实现
+- `data/external/records.csv` 为外部系统使用记录（静态演示数据，每月 10 条，覆盖 2025 年 1 - 12 月）
+- 天气已接入和风天气 API（实时温度 / 湿度 / 风力 / 降水），用户位置基于 IP 定位（ip-api.com）；用户 ID 仍为演示用模拟数据
+- 注：报告场景按「当前月份」取数，演示数据只覆盖 2025 年；当前月份超出数据范围时 `fetch_external_data` 会返回无记录提示，属预期行为
 
 ## 扩展方向
 
-- 天气 / 位置工具接入真实 API（高德、和风天气等）
+
 - 引入检索质量评估脚本与分片参数调优实验
 - 补充单元测试与容器化部署

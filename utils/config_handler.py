@@ -24,10 +24,19 @@ def log_agent_config(config_path: str=get_abs_path("config/agent.yml"), encoding
         return yaml.load(f, Loader=yaml.FullLoader)
 
 
+def log_weather_config(config_path: str=get_abs_path("config/weather.yml"), encoding: str="utf-8"):
+    try:
+        with open(config_path, "r", encoding=encoding) as f:
+            return yaml.load(f, Loader=yaml.FullLoader)
+    except FileNotFoundError:
+        return {}
+
+
 rag_conf = log_rag_config()
 chroma_conf = log_chroma_config()
 prompts_conf = log_prompts_config()
 agent_conf = log_agent_config()
+weather_conf = log_weather_config()
 
 if __name__ == "__main__":
     print(rag_conf["chat_model_name"])

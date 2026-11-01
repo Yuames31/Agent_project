@@ -1,28 +1,82 @@
 import os
+import random
+import requests
+from datetime import datetime
 from langchain_core.tools import tool
 from rag.rag_service import RagSummarizeService
-import random
-from utils.config_handler import agent_conf
+from utils.config_handler import agent_conf, weather_conf
 from utils.path_tool import get_abs_path
 from utils.logger_handler import logger
 
 rag = RagSummarizeService()
+# 常用城市 -> 和风天气 LocationID（采用内置映射）
+CITY_IDS = {
+    "北京": "101010100", "上海": "101020100", "天津": "101030100", "重庆": "101040100",
+    "广州": "101280101", "深圳": "101280601", "东莞": "101281601", "佛山": "101280800",
+    "珠海": "101280701", "杭州": "101210101", "成都": "101270101", "武汉": "101200101",
+    "南京": "101190101", "苏州": "101190401", "长沙": "101250101", "西安": "101110101",
+    "郑州": "101180101", "青岛": "101120201", "厦门": "101230201", "香港": "101320101",
+}
+
+
+def normalize_city_name(city: str) -> str:
+    """归一化城市名，'广州市' -> '广州'，便于匹配 LocationID 映射表"""
+    for suffix in ("市", "地区", "盟", "州"):
+        if city.endswith(suffix) and len(city) > 2:
+            return city[: -len(suffix)]
+    return city
+
+
 user_ids = ["1001", "1002", "1003", "1004", "1005", "1006", "1007", "1008", "1009", "1010",]
-month_arr = ["2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06",
-             "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", ]
 external_data = {}
 
 @tool(description="从向量存储中检索参考资料")
 def rag_summarize(query: str) -> str:
     return rag.rag_summarize(query)
 
-@tool(description="获取指定城市的天气，以消息字符串的形式返回")
+@tool(description="获取指定城市的实时天气，以消息字符串的形式返回")
 def get_weather(city: str) -> str:
-    return f"城市{city}天气为晴天，气温26摄氏度，空气湿度50%，南风1级，AQI21，最近6小时降雨概率极低"
+    # API Key 从环境变量读取（QWEATHER_API_KEY）
+    api_key = os.environ.get("QWEATHER_API_KEY")
+    api_host = weather_conf.get("api_host", "")
+    if not api_key or not api_host:
+        return f"天气服务未配置，暂无法获取{city}天气"
+
+    location_id = CITY_IDS.get(normalize_city_name(city))
+    if not location_id:
+        return f"暂不支持{city}的天气查询，可查询：{'、'.join(CITY_IDS.keys())}"
+
+    base_url = f"https://{api_host}"
+    try:
+        now = requests.get(f"{base_url}/v7/weather/now",
+                           params={"location": location_id, "key": api_key}, timeout=8).json()
+        if now.get("code") != "200":
+            return f"获取{city}天气失败：{now.get('code', 'unknown')}"
+
+        n = now["now"]
+        # 空气质量接口需要更高订阅（当前返回 403），失败时降级为不展示 AQI
+        aqi_text = ""
+        try:
+            air = requests.get(f"{base_url}/v7/air/now",
+                               params={"location": location_id, "key": api_key}, timeout=8).json()
+            if air.get("code") == "200":
+                aqi_text = f"，AQI{air['now']['aqi']}"
+        except Exception:
+            pass
+
+        return (f"城市{city}天气为{n['text']}，气温{n['temp']}摄氏度，"
+                f"空气湿度{n['humidity']}%，{n['windDir']}{n['windScale']}级"
+                f"{aqi_text}，最近1小时降水{n['precip']}mm")
+    except Exception as e:
+        return f"获取{city}天气失败：{str(e)}"
 
 @tool(description="获取用户所在城市的名称，以纯字符串形式返回")
 def get_user_location() -> str:
-    return random.choice(["北京", "上海", "广州", "深圳", "杭州"])
+    try:
+        resp = requests.get("http://ip-api.com/json/?lang=zh-CN", timeout=5).json()
+        return resp.get("city") or "未知"
+    except Exception:
+        return "未知"
 
 @tool(description="获取用户的ID，以纯字符串形式返回")
 def get_user_id() -> str:
@@ -30,7 +84,7 @@ def get_user_id() -> str:
 
 @tool(description="获取当前月份，以纯字符串形式返回")
 def get_current_month() -> str:
-    return random.choice(month_arr)
+    return datetime.now().strftime("%Y-%m")
 
 def generate_external_data():
     """

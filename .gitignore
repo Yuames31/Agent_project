@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# 运行产物
+logs/
+sessions/
+faiss_index/
+md5.text
+
+# 密钥与本地配置
+.env
+*.key
+config/weather.yml
+
+# IDE / 系统
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
