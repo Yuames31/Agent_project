@@ -36,6 +36,9 @@ class VectorStoreService:
         )
 
     def get_retriever(self):
+        # 空库兜底：未构建向量索引时返回 None，由上层提示用户，避免 AttributeError
+        if self.vector_store is None:
+            return None
         return self.vector_store.as_retriever(search_kwargs={"k": chroma_conf["k"]})
 
     def load_document(self):

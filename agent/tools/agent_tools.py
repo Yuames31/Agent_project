@@ -8,7 +8,15 @@ from utils.config_handler import agent_conf, weather_conf
 from utils.path_tool import get_abs_path
 from utils.logger_handler import logger
 
-rag = RagSummarizeService()
+_rag_service = None
+
+
+def _get_rag_service():
+    # 延迟加载：首次调用 rag_summarize 时才初始化向量库，避免 import 即建库、拖慢启动
+    global _rag_service
+    if _rag_service is None:
+        _rag_service = RagSummarizeService()
+    return _rag_service
 # 常用城市 -> 和风天气 LocationID（采用内置映射）
 CITY_IDS = {
     "北京": "101010100", "上海": "101020100", "天津": "101030100", "重庆": "101040100",
@@ -32,7 +40,7 @@ external_data = {}
 
 @tool(description="从向量存储中检索参考资料")
 def rag_summarize(query: str) -> str:
-    return rag.rag_summarize(query)
+    return _get_rag_service().rag_summarize(query)
 
 @tool(description="获取指定城市的实时天气，以消息字符串的形式返回")
 def get_weather(city: str) -> str:

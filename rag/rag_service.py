@@ -33,6 +33,9 @@ class RagSummarizeService(object):
         return self.retriever.invoke(query)
 
     def rag_summarize(self, query: str) -> str:
+        # 空库兜底：知识库未构建时直接返回提示，不抛异常
+        if self.retriever is None:
+            return "知识库尚未构建，暂无可检索的参考文档。请先运行 python rag/vector_store.py 导入知识文档。"
 
         context_docs = self.retriever_docs(query)
         context = ""
